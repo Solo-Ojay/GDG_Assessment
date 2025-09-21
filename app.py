@@ -8,9 +8,14 @@ from joblib import load
 # Load trained model
 BASE_DIR = os.path.dirname(__file__)
 
-model = load(os.path.join(BASE_DIR, "whr_best_model.pkl"))
-scaler = load(os.path.join(BASE_DIR, "whr_scaler.pkl"))
-model_columns = load(os.path.join(BASE_DIR, "whr_model_columns.pkl"))
+with open(os.path.join(BASE_DIR, "whr_best_model.pkl"), "rb") as f:
+    model = pickle.load(f)
+
+with open(os.path.join(BASE_DIR, "whr_scaler.pkl"), "rb") as f:
+    scaler = pickle.load(f)
+
+with open(os.path.join(BASE_DIR, "whr_model_columns.pkl"), "rb") as f:
+    model_columns = pickle.load(f)
 
 st.title("Happiness Score Predictor 🌏")
 
