@@ -8,7 +8,7 @@ from joblib import load
 # Load trained model
 BASE_DIR = os.path.dirname(__file__)
 
-model = load(os.path.join(BASE_DIR, "whr_best_model.joblib"))
+model = load(os.path.join(BASE_DIR, "whr_best_model.pkl"))
 scaler = load(os.path.join(BASE_DIR, "whr_scaler.pkl"))
 model_columns = load(os.path.join(BASE_DIR, "whr_model_columns.pkl"))
 
