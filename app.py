@@ -1,18 +1,21 @@
 # app.py
 import streamlit as st
+import os
 import pandas as pd
 import pickle
 
 # Load trained model
-with open(r"C:\Users\HP\Downloads\GDG_Assessment\whr_best_model.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(__file__)
+
+with open(os.path.join(BASE_DIR, "whr_best_model.pkl"), "rb") as f:
     model = pickle.load(f)
 
-# Load scaler if used during training
-with open(r"C:\Users\HP\Downloads\GDG_Assessment\whr_scaler.pkl", "rb") as f:
+# Load scaler
+with open(os.path.join(BASE_DIR, "whr_scaler.pkl"), "rb") as f:
     scaler = pickle.load(f)
 
-# Load columns info (especially for one-hot encoded categorical variables)
-with open(r"C:\Users\HP\Downloads\GDG_Assessment\whr_model_columns.pkl", "rb") as f:
+# Load model columns
+with open(os.path.join(BASE_DIR, "whr_model_columns.pkl"), "rb") as f:
     model_columns = pickle.load(f)
 
 st.title("Happiness Score Predictor 🌏")
