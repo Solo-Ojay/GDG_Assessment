@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.preprocessing import StandardScaler
 
 # Load trained model
 with open(r"C:\Users\HP\Downloads\GDG_Assessment\whr_best_model.pkl", "rb") as f:
